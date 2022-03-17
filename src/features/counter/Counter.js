@@ -12,6 +12,7 @@ import styles from './Counter.module.css';
 
 export function Counter() {
   const count = useSelector(selectCount);
+  const state = useSelector(state => state);
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState('2');
 
@@ -35,6 +36,8 @@ export function Counter() {
         >
           +
         </button>
+        {state.counter.status}
+
       </div>
       <div className={styles.row}>
         <input
